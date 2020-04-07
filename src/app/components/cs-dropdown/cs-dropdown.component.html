@@ -1,0 +1,15 @@
+<div class="dropdown-container" [ngClass]="{'expanded' : isExpanded, 'disabled': disabled }">
+    <div class="content">
+        {{getContent()}}
+        <button id="cs-dropdown-button" type="button" class="icon-btn dropdown" [disabled]="disabled" (click)="onDropdownExpand()" *ngIf="!isExpanded"><i
+                class="fas fa-chevron-down"></i></button>
+        <button id="cs-dropdown-button" type="button" class="icon-btn dropdown" (click)="onDropdownMinimize()" *ngIf="isExpanded"><i
+                class="fas fa-chevron-up"></i></button>
+    </div>
+</div>
+<div class="list-container" *ngIf="isExpanded">
+    <div *ngFor="let item of dropdownData">
+        <button type="button" class="item-btn transparent-btn" [ngClass]="{'selected' : item.isSelected}"
+            (click)="onItemSelect(item.key)">{{item.value}}</button>
+    </div>
+</div>

@@ -1,0 +1,201 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '@fortawesome/fontawesome-free/css/all.css';
+@import './variables.scss';
+
+html,
+body {
+    height: 100%;
+    font-family: CSTypeEP, Arial, Helvetica, sans-serif !important;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.icon-btn,
+.day-btn,
+.month-btn,
+.transparent-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.btn-cs-black {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 15px;
+    background-color: $color-black;
+    color: $color-white;
+    border-radius: 0;
+    height: 40px;
+    width: 100px;
+    outline: 0;
+
+    &:hover {
+        background-color: $color-gray-most-dark;
+        color: $color-white;
+    }
+
+    &.wide {
+        width: 150px;
+        height: 40px;
+    }
+
+    &.wider {
+        width: 200px;
+        height: 40px;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.btn-cs-white {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: $color-white;
+    color: $color-black;
+    border-radius: 0;
+    border: $border-black;
+    height: 40px;
+    width: 100px;
+    outline: 0;
+
+    &:hover {
+        background-color: $color-gray-most-dark;
+        color: $color-white;
+    }
+
+    &.wide {
+        width: 150px;
+        height: 40px;
+    }
+
+    &.wider {
+        width: 200px;
+        height: 40px;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+:host ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: black !important;
+}
+.modal-content {
+    background-color: transparent;
+    border: none;
+}
+
+mat-spinner {
+    margin: 0 auto;
+}
+
+@font-face {
+    font-family: Credit Suisse Headline;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CreditSuisseHeadlineWeb-Regular.eot);
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CreditSuisseHeadlineWeb-Regular.eot) format("eot"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CreditSuisseHeadlineWeb-Regular.woff) format("woff"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CreditSuisseHeadlineWeb-Regular.woff2) format("woff2"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CreditSuisseHeadlineWeb-Regular.svg) format("svg")
+}
+
+@font-face {
+    font-family: CSTypeEP;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Romanv4.eot);
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Romanv4.eot) format("eot"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Romanv4.woff) format("woff"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Romanv4.woff2) format("woff2"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Romanv4.ttf) format("truetype"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Romanv4.svg) format("svg")
+}
+
+@font-face {
+    font-family: CSTypeEP;
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-RomanItalicv4.eot);
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-RomanItalicv4.eot) format("eot"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-RomanItalicv4.woff) format("woff"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-RomanItalicv4.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: CSTypeEP;
+    font-style: normal;
+    font-weight: 200;
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Lightv4.eot);
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Lightv4.eot) format("eot"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Lightv4.woff) format("woff"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Lightv4.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: CSTypeEP;
+    font-style: italic;
+    font-weight: 200;
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-LightItalicv4.eot);
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-LightItalicv4.eot) format("eot"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-LightItalicv4.woff) format("woff"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-LightItalicv4.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: CSTypeEP;
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Boldv4.eot);
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Boldv4.eot) format("eot"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Boldv4.woff) format("woff"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Boldv4.woff2) format("woff2"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Boldv4.ttf) format("truetype"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eP-Boldv4.svg) format("svg")
+}
+
+@font-face {
+    font-family: CSTypeET;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-Romanv4.eot);
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-Romanv4.eot) format("eot"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-Romanv4.woff) format("woff"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-Romanv4.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: CSTypeET;
+    font-style: italic;
+    font-weight: 400;
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-RomanItalicv4.eot);
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-RomanItalicv4.eot) format("eot"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-RomanItalicv4.woff) format("woff"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-RomanItalicv4.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: CSTypeET;
+    font-style: normal;
+    font-weight: 200;
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-Lightv4.eot);
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-Lightv4.eot) format("eot"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-Lightv4.woff) format("woff"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-Lightv4.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: CSTypeET;
+    font-style: italic;
+    font-weight: 200;
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-LightItalicv4.eot);
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-LightItalicv4.eot) format("eot"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-LightItalicv4.woff) format("woff"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-LightItalicv4.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: CSTypeET;
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-Boldv4.eot);
+    src: url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-Boldv4.eot) format("eot"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-Boldv4.woff) format("woff"), url(https://cdnext.credit-suisse.com/assets-tetris/font/CSW07eT-Boldv4.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: CSTypeEP-Bold;
+    src: url(https://cdnext.credit-suisse.com/aemformspub/etc/clientlibs/cs-forms-common-atomic-light/css/CSW07eP-Boldv4.ttf)
+}
+
+@font-face {
+    font-family: CSTypeEP-Roman;
+    src: url(https://cdnext.credit-suisse.com/aemformspub/etc/clientlibs/cs-forms-common-atomic-light/css/CSW07eP-Romanv4.ttf)
+}

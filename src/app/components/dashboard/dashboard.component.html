@@ -1,0 +1,109 @@
+<div class="action-buttons-container">
+  <button type="button" class="btn-cs-white wide" (click)="openModal(filterSortModal)">Sort & Filter</button>
+  <button type="button" class="btn-cs-white" (click)="reloadDashboard()">Reload</button>
+</div>
+<ng-template #filterSortModal let-modal>
+  <div class="filter-sort-container">
+    <h2>Filter & sort</h2>
+    <h3>Sort by</h3>
+    <app-cs-dropdown [data]="sortTypes" [selectedItems]="[]" [singlePick]="true" (onDataChange)="onDataChange($event)"></app-cs-dropdown>
+    <h3>Filter</h3>
+    <input [(ngModel)]="filterParams" class="form-control short-text" placeholder="Filter...">
+  </div>
+</ng-template>
+<div class="custom-paginator-container">
+  <div>
+    <button class="icon-btn" (click)="previousPage()"><i class="fas fa-chevron-left"></i></button>
+    <span class="page-info">Page {{paginator.pageIndex + 1}} of {{pageCount}}.</span>
+    <button class="icon-btn" (click)="nextPage()"><i class="fas fa-chevron-right"></i></button>
+    <span class="page-input">Go to page
+      <input type="numer" class="page-input" max="999" min="1" (change)="paginatorInputChange($event)">
+    </span>
+  </div>
+</div>
+<div class="mat-elevation-z8">
+  <mat-paginator [pageSizeOptions]="[10]" visible="false"></mat-paginator>
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let r"> {{r.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="request-name">
+      <th mat-header-cell *matHeaderCellDef>Request name </th>
+      <td mat-cell *matCellDef="let r" [matTooltip]="tooltipContent(r.RequestName)"
+        [matTooltipDisabled]="hideTooltip(r.RequestName)"> {{r.RequestName | truncate:50}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="requestor">
+      <th mat-header-cell *matHeaderCellDef>Requestor</th>
+      <td mat-cell *matCellDef="let r"> {{getUserDisplayName(r.Requestor)  | truncate:50}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="good-ending">
+      <th mat-header-cell *matHeaderCellDef>Good ending</th>
+      <td mat-cell *matCellDef="let r"> {{r.GoodEnding}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let r" [matTooltip]="tooltipContent(r.Description)"
+        [matTooltipDisabled]="hideTooltip(r.Description)" [matTooltipClass]="'cs-tooltip'">
+        {{r.Description | truncate:50}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="need-storyteller">
+      <th mat-header-cell *matHeaderCellDef>Need storyteller</th>
+      <td mat-cell *matCellDef="let r"> {{r.NeedStoryteller}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="storyteller">
+      <th mat-header-cell *matHeaderCellDef>Storyteller</th>
+      <td mat-cell *matCellDef="let r" [matTooltip]="tooltipContent(r.Storyteller)"
+        [matTooltipDisabled]="hideTooltip(r.Storyteller)"> {{r.Storyteller | truncate:50}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="wanted-characters">
+      <th mat-header-cell *matHeaderCellDef>Wanted characters</th>
+      <td mat-cell *matCellDef="let r" [matTooltip]="tooltipContent(r.WantedCharacters)"
+        [matTooltipDisabled]="hideTooltip(r.WantedCharacters)"> {{r.WantedCharacters | truncate:50}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="deadline">
+      <th mat-header-cell *matHeaderCellDef>Deadline</th>
+      <td mat-cell *matCellDef="let r"> {{r.Deadline | date:'dd-MMM-yy'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="budget">
+      <th mat-header-cell *matHeaderCellDef>Budget</th>
+      <td mat-cell *matCellDef="let r"> {{r.Budget  | currency:'FBD '}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let r" matTooltip="r.Status" [matTooltipDisabled]="r.Status > 50">
+        {{r.Status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="controls">
+      <th mat-header-cell *matHeaderCellDef>Controls</th>
+      <td mat-cell *matCellDef="let r">
+        <button routerLink="/form/{{r.id}}" class="icon-btn">Open
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+<div class="custom-paginator-container">
+  <div>
+    <button class="icon-btn" (click)="previousPage()"><i class="fas fa-chevron-left"></i></button>
+    <span class="page-info">Page {{paginator.pageIndex + 1}} of {{pageCount}}.</span>
+    <button class="icon-btn" (click)="nextPage()"><i class="fas fa-chevron-right"></i></button>
+    <span class="page-input">Go to page
+      <input type="numer" class="page-input" max="999" min="1" (change)="paginatorInputChange($event)">
+    </span>
+  </div>
+</div>

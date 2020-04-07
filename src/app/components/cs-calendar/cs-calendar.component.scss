@@ -1,0 +1,160 @@
+@import '../../../variables.scss';
+.month-picker-container {
+    width: 320px;
+    margin: 70px 0 0;
+
+    .row {
+        height: 40px;
+    }
+
+    .col-sm {
+        padding: 0;
+        line-height: 38px;
+        color: $color-gray;
+    }
+
+    .month-btn {
+        width: 80px;
+        height: 40px;
+
+        &.active {
+            color: $color-white !important;
+            background-color: $color-black;
+        }
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-gray-most-dark;
+        }
+    }
+}
+
+.today-button-container {
+    margin: 30px 0 0;
+
+    .btn-today {
+        float: right;
+        width: 110px;
+        height: 40px;
+        font-weight: bold;
+        font-size: 14px;
+        background-color: transparent;
+        color: $color-black;
+        border-radius: 0;
+        border: 1px solid $color-black;
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-gray-most-dark;
+        }
+    }
+}
+
+
+
+.icon-btn {
+    padding: 15px 0 0;
+    font-size: 20px;
+}
+
+.fa-chevron {
+
+    &-right,
+    &-left {
+        color: $color-black;
+        font-size: 20px;
+    }
+}
+
+.days-container {
+    font-size: 14px;
+    width: 315px;
+    text-align: center;
+    margin: 30px 0 0;
+
+    .row {
+        height: 40px;
+    }
+
+    .col-sm {
+        padding: 0;
+        line-height: 38px;
+        color: $color-gray;
+    }
+
+    .day-name {
+        color: $color-black;
+    }
+
+    .day-btn {
+        width: 100%;
+        height: 100%;
+        color: $color-gray;
+
+        &:disabled {
+            color: $color-gray !important;
+        }
+
+        &.current-month {
+            color: $color-black;
+        }
+
+        &.active {
+            color: $color-white !important;
+            background-color: $color-black;
+        }
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-gray-most-dark;
+        }
+    }
+}
+
+.month-container,
+.year-container {
+    div {
+        color: $color-black;
+        font-size: 24px;
+        text-align: center;
+        display: inline-block;
+        margin: 0 15px;
+    }
+}
+
+.year-container {
+    div {
+        min-width: 55px;
+        width: 55px;
+    }
+
+    .cancle-btn {
+        float: right;
+    }
+}
+
+.month-container {
+    div {
+        min-width: 120px;
+        width: 120px;
+    }
+}
+
+.calendar-container {
+    height: 368px;
+    width: 680px;
+    background-color: $color-light-gray;
+
+    .left {
+        width: 315px;
+    }
+
+    .col-right {
+        padding: 0;
+        margin: 0;
+    }
+
+    .right {
+        width: 320px;
+    }
+}

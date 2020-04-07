@@ -1,0 +1,63 @@
+<div class="calendar-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-auto">
+                <div class="left">
+                    <div class="month-container">
+                        <button type="button" class="icon-btn" (click)="onMonthClick(-1)"><i class="fas fa-chevron-left"></i></button>
+                        <div>{{monthsPicker[selectedMonth].name}}</div>
+                        <button type="button" class="icon-btn" (click)="onMonthClick(1)"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="days-container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm day-name" *ngFor="let dayName of namesOfDays">
+                                    {{dayName}}
+                                </div>
+                            </div>
+                            <div class="row" *ngFor="let week of month">
+                                <div class="col-sm" *ngFor="let day of week.days">
+                                    <button type="button" class="day-btn" [disabled]="isDayDisabled(day)" (click)="onDayClick(day)"
+                                        [ngClass]="{'current-month' : day.isSelectedMonth, 'active' :day.isSelected}">{{day.day.getDate()}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-auto col-right">
+                <div class="right">
+                    <div class="year-container">
+                        <button type="button" class="icon-btn" (click)="onYearClick(-1)"><i class="fas fa-chevron-left"></i></button>
+                        <div>{{selectedYear}}</div>
+                        <button type="button" class="icon-btn" (click)="onYearClick(1)"><i class="fas fa-chevron-right"></i></button>
+                        <button type="button"class="icon-btn cancle-btn" (click)="cacnleButtonClick()"><i
+                                class="fas fa-times"></i></button>
+                    </div>
+                    <div class="month-picker-container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm" *ngFor="let mIndex of iterator(4,0)">
+                                    <button type="button" class="month-btn" (click)="onMmonthPickerClick(mIndex)"
+                                        [ngClass]="{'active' : selectedMonth==mIndex}">{{monthsPicker[mIndex].shortName}}</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm" *ngFor="let mIndex of iterator(4,4)">
+                                    <button type="button" class="month-btn" (click)="onMmonthPickerClick(mIndex)"
+                                        [ngClass]="{'active' : selectedMonth==mIndex}">{{monthsPicker[mIndex].shortName}}</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm" *ngFor="let mIndex of iterator(4,8)">
+                                    <button type="button" class="month-btn" (click)="onMmonthPickerClick(mIndex)"
+                                        [ngClass]="{'active' : selectedMonth==mIndex}">{{monthsPicker[mIndex].shortName}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

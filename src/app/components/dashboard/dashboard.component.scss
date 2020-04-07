@@ -1,0 +1,116 @@
+@import 'variables';
+
+.action-buttons-container {
+    margin: 30px 0 0;
+
+    button {
+        &:hover {
+            border: 2px solid black;
+            background-color: $color-white;
+            color: $color-black;
+        }
+    }
+}
+
+.filter-sort-container {
+    border-radius: 0px;
+    padding: 30px 15px;
+    background-color: $color-white;
+
+    h3 {
+        margin: 15px 0 0;
+    }
+
+    input {
+        color: $color-gray-dark;
+        font-size: 16px;
+        border-radius: 0px;
+        height: 46px;
+
+        &:focus {
+            border-color: $color-black;
+            box-shadow: none;
+            outline: 0 none;
+            color: $color-black;
+        }
+
+        &:disabled {
+            background-color: $color-white;
+            color: $color-gray !important;
+            border: $border-gray-disabled !important;
+        }
+
+    }
+}
+
+.cdk-column {
+    &-id {
+        width: 37px;
+        max-width: 37px;
+        padding-left: 10px !important;
+        text-align: left;
+    }
+}
+
+table,
+.mat-elevation-z8 {
+    width: 100%;
+    transition: none !important;
+    box-shadow: none !important;
+
+    th {
+        background-color: $color-white;
+        color: $color-black;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    td {
+        padding: 0 15px 0 0;
+    }
+
+    .mat-paginator {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+.custom-paginator-container {
+    margin: 30px 0;
+
+    .page-info {
+        margin: 0 15px;
+    }
+
+    .fa-chevron-right {
+        margin: 0 15px 0 0;
+    }
+
+    input,
+    textarea {
+        color: $color-gray-dark;
+        font-size: 16px;
+        height: 40px;
+        width: 50px;
+        margin: 0 0 0 15px;
+        font-weight: bold;
+        text-align: center;
+
+        &:focus {
+            border-color: $color-black;
+            box-shadow: none;
+            outline: 0 none;
+            color: $color-black;
+        }
+
+        &:disabled {
+            background-color: $color-white;
+            color: $color-gray !important;
+            border: $border-gray-disabled !important;
+        }
+    }
+}
+
+.cs-tooltip {
+    word-break: break-word;
+}
